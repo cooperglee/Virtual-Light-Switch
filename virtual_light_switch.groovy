@@ -16,42 +16,23 @@
 metadata {
 	definition (name: "Virtual Light witch", namespace: "virt_light_sw", author: "Cooper Lee") {
 		capability "Switch"
-
 		capability "Polling"
 		capability "Refresh"
 	}
 
-preferences {
-}
-
-// simulator metadata
-	simulator {
-	}
-
 	// UI tile definitions
 	tiles {
-    	def tileLabel = $swLabel
-    	def tileName = $device
 		standardTile("switch", "device.switch", width: 2, height: 2, canChangeIcon: true) {
-			state "off", label: '${name}', action: "switch.on", icon: "st.switches.light.off", backgroundColor: "#8888ff", nextState: "turningOn"
-			state "on", label: '${name}', action: "switch.off", icon: "st.switches.light.on", backgroundColor: "#0088ff", nextState: "turningOff"
+			state "off", label: 'off', action: "switch.on", icon: "st.switches.light.off", backgroundColor: "#DDDDff", nextState: "turningOn"
+			state "on", label: 'on', action: "switch.off", icon: "st.switches.light.on", backgroundColor: "#0088ff", nextState: "turningOff"
 			state "turningOff", label: 'Turning Off', action: "switch.on", icon: "st.switches.light.off", backgroundColor: "#0088ff"
 			state "turningOn", label: 'Turning On', action: "switch.off", icon: "st.switches.light.on", backgroundColor: "#444488"
-
 		}
-        standardTile("refresh", "device.switch", inactiveLabel: false, decoration: "flat") {
-                        state "default", label:"", action:"refresh.refresh", icon:"st.secondary.refresh"
-                }
-        standardTile("configure", "device.switch", inactiveLabel: false, decoration: "flat") {
-        				state "default", label:"", action:"configuration.configure", icon:"st.secondary.configure"
-                }
-
-
-
-		main "[switch]"
-		details ("[switch, refresh, configure]")
+		main "switch"
+		details("switch")
 	}
 }
+
 
 def parse(String description) {
 }
