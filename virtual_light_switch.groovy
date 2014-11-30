@@ -48,8 +48,8 @@ preferences {
 
 
 
-		main "switch"
-		details "[switch, refresh, configure]"
+		main "[switch]"
+		details ("[switch, refresh, configure]")
 	}
 }
 
