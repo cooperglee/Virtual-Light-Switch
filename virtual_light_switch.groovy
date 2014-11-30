@@ -37,8 +37,7 @@ preferences {
 			state "on", label: '${name}', action: "switch.off", icon: "st.switches.light.on", backgroundColor: "#0088ff", nextState: "turningOff"
 			state "turningOff", label: 'Turning Off', action: "switch.on", icon: "st.switches.light.off", backgroundColor: "#0088ff"
 			state "turningOn", label: 'Turning On', action: "switch.off", icon: "st.switches.light.on", backgroundColor: "#444488"
-            label title: "Assign a name for this virtual tile", required: false
-            icon title: "Choose an icon for $app.label", required: false, defaultValue: "st.Lighting.light13-icn"
+
 		}
         standardTile("refresh", "device.switch", inactiveLabel: false, decoration: "flat") {
                         state "default", label:"", action:"refresh.refresh", icon:"st.secondary.refresh"
